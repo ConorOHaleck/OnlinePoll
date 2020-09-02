@@ -17,6 +17,9 @@ namespace VoterProjectRegister.Models
         [StringLength(280)]
         public string PollDescription { get; set; }
 
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+
         public virtual ICollection<Choice> Choices { get; set; }
         public virtual ICollection<OneTimeCode> Codes { get; set; }
 

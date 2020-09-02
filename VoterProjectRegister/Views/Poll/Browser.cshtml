@@ -1,0 +1,41 @@
+﻿@model IEnumerable<VoterProjectRegister.Models.Poll>
+
+@{
+    ViewData["Title"] = "Browser";
+}
+
+<h1>Browser</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PollTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PollDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PollTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PollDescription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PollID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PollID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PollID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
