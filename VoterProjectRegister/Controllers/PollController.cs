@@ -21,5 +21,25 @@ namespace VoterProjectRegister.Controllers
         {
             return View();
         }
+
+        public IActionResult Browser()
+        {
+            return View();
+        }
+
+        public IActionResult Edit(int PollID)
+        {
+            return View(PollID);
+        }
+
+        public IActionResult Details(int PollID)
+        {
+            return View(PollID);
+        }
+
+        public IActionResult Delete(int PollID)
+        {
+            return View(PollID);
+        }
     }
 }
